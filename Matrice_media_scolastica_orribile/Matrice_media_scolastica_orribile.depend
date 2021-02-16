@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1611906720 source:d:\programmini\c++-c\matrice_media_scolastica_orribile\main.cpp
+	<iostream>
+	<string>
+	<stdlib.h>
+	<time.h>
+

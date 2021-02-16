@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1607029506 source:d:\programmini\c++-c\helloarray\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1607515057 source:d:\programmini\c++-c\battleshipone\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+
+1608223713 source:d:\programmini\c++-c\battleshiptwo\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+

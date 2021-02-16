@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1610904969 source:d:\programmini\c++-c\piladistringhe\main.cpp
+	<iostream>
+	<string>
+
