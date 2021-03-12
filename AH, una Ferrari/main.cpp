@@ -1,6 +1,6 @@
 /*
  *Programma magnifico.cpp
- *Che c***o sono le matrici?
+ *le matrici?
  *Autore: MarVin
  *Data: 11/12/2020
 */
