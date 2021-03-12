@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1614328921 source:d:\programmini\c++-c\bubblesort\main.cpp
+	<iostream>
+	<stdlib.h>
+	<time.h>
+

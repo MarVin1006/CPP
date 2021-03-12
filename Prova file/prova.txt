@@ -1,0 +1,4 @@
+Prima frase
+Frase numero 2
+Modifica 4 apportata!
+Adesso chiudo il file...
