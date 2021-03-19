@@ -5,16 +5,31 @@
 using namespace std;
 int main()
 {
-    int numero = 1;
+    int valore;
     //Creazione file
-    ofstream Numeri("numeri.txt");
     ofstream Maggiori("maggiori.txt");
     ofstream Minori("minori.txt");
-    int n;
+ 
     cout << "Inserire un valore intero: ";
-    cin >> n;
+    cin >> valore;
 
-    Numeri.close();
+    string filename("numeri.txt");
+    int number;
+
+    ifstream input_file(filename);
+
+    while (input_file >> number) {
+        if (number>valore){
+            Maggiori << number << endl;
+        }
+        else if (number<valore)
+        {
+            Minori << number << endl;
+        }
+        
+    }
+    input_file.close();
+
     Maggiori.close();
     Minori.close();
 
