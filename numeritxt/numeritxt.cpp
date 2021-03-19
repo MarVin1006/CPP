@@ -1,4 +1,4 @@
-//Programma incompleto
+//Dato un file numeri.txt contenente valori interi e un valore intero N inserito dall’utente, memorizzare i valori contenuti nel file minori di N in un nuovo file minori.txt e quelli maggiori in un nuovo file maggiori.txt.
 #include <iostream>
 #include <fstream>
 
