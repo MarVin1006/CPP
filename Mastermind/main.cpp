@@ -1,14 +1,38 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
+#include <string>
 
 using namespace std;
 
-int randn(int num)
+bool Contains(int v[], int t, int x)
 {
-    return (rand() % 10);
+    for(int i=0; i<t; i++){
+        if(v[i]==x) return true;
+        }
+    return false;
 }
 
+int Fill(int v[], int l)
+{
+    srand(time(NULL));
+    for(int i=0; i<l; i++){
+        do{v[i] = rand()%10;
+        }while(!Contains(v,i,v[i]));
+    }
+}
+
+void Attempt(int v[], int l)
+{
+    for(int i=0; i<l; i++){
+        do{
+            cout<<"Inserisci un numero: ";
+            cin>>v[i];
+        }while(v[i]>=0 && v[i]<=9);
+    }
+}
+
+/*
 char vuoicontinuare()
 {
     char x
@@ -17,13 +41,26 @@ char vuoicontinuare()
     cin >>
     while( x=!'s' || x=!'S' || x=!'n' || x=!'N')
 }
+*/
+
+string Check(int x[], int y[], int l)
+{
+    for(int i=0; i<l; i++){
+        if(x[i] != y[i])
+    }
+}
 
 int main()
 {
-    srand(time(NULL));
-    int tentativi = 0, matrice[4][4];
-
-
-
+    int cpuarray[4], playerarray[4];
+    Fill(cpuarray, 4);
+    while (true)
+    {
+        Attempt(playerarray, 4);
+        string r = Check(cpuarray, playerarray, 4);
+        if(r=="****") break;
+        cout<<r;
+    }
+    cout<<"Bravissimo";
     return 0;
 }
