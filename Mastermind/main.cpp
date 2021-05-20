@@ -13,7 +13,7 @@ bool Contains(int v[], int t, int x)
     return false;
 }
 
-int Fill(int v[], int l)
+void Fill(int v[], int l)
 {
     srand(time(NULL));
     for(int i=0; i<l; i++){
@@ -45,20 +45,28 @@ char vuoicontinuare()
 
 string Check(int x[], int y[], int l)
 {
+    string strike;
     for(int i=0; i<l; i++){
-        if(x[i] != y[i])
+        if(x[i] == y[i]){
+            strike += "*";
+        }
     }
+    return strike;
 }
 
 int main()
 {
     int cpuarray[4], playerarray[4];
     Fill(cpuarray, 4);
+    string fullbar;
+    for(int y=0; y<4; y++){
+        fullbar += "*";
+    }
     while (true)
     {
         Attempt(playerarray, 4);
         string r = Check(cpuarray, playerarray, 4);
-        if(r=="****") break;
+        if(r==fullbar) break;
         cout<<r;
     }
     cout<<"Bravissimo";
