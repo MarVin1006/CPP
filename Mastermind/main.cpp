@@ -17,7 +17,7 @@ void Fill(int v[], int l)
 {
     srand(time(NULL));
     for(int i=0; i<l; i++){
-        do{v[i] = rand()%10;
+        do{v[i] = (rand() % 10);
         }while(!Contains(v,i,v[i]));
     }
 }
