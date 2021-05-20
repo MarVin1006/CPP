@@ -1,16 +1,15 @@
 #include <iostream>
 #include <stdlib.h>
 #include <time.h>
-#include <string>
+#include <string.h>
 
 using namespace std;
 
 bool Contains(int v[], int t, int x)
 {
     for(int i=0; i<t; i++){
-        if(v[i]==x) return true;
-        }
-    return false;
+        if(v[i]==x) return false;}
+    return true;
 }
 
 void Fill(int v[], int l)
@@ -28,20 +27,9 @@ void Attempt(int v[], int l)
         do{
             cout<<"Inserisci un numero: ";
             cin>>v[i];
-        }while(v[i]>=0 && v[i]<=9);
+        }while(v[i]<=0 && v[i]>=9);
     }
 }
-
-/*
-char vuoicontinuare()
-{
-    char x
-    do
-    cout << "Vuoi continuare(S o N)? "
-    cin >>
-    while( x=!'s' || x=!'S' || x=!'n' || x=!'N')
-}
-*/
 
 string Check(int x[], int y[], int l)
 {
@@ -57,18 +45,29 @@ string Check(int x[], int y[], int l)
 int main()
 {
     int cpuarray[4], playerarray[4];
+    int tentativi = 5;
+    string r;
     Fill(cpuarray, 4);
-    string fullbar;
-    for(int y=0; y<4; y++){
-        fullbar += "*";
+    cout << "array ";
+    for (int d=0; d<4; d++){
+        cout << cpuarray[d];
     }
-    while (true)
+    while (tentativi > 0)
     {
+        cout << endl << tentativi << " Tentativi rimanenti" << endl;
         Attempt(playerarray, 4);
-        string r = Check(cpuarray, playerarray, 4);
-        if(r==fullbar) break;
-        cout<<r;
+        r = Check(cpuarray, playerarray, 4);
+        if(r=="****"){
+        break;
     }
-    cout<<"Bravissimo";
+        cout<<r;
+        tentativi -= 1;
+    }
+    if(r=="****"){
+        cout<<"Sei il campione supremo di questo gioco";
+    }
+    else{
+        cout <<"Sei stato sconfitto da un computer...";
+    }
     return 0;
 }
