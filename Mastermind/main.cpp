@@ -23,9 +23,9 @@ void Fill(int v[], int l)
 
 void Attempt(int v[], int l)
 {
+    cout<<"Inserisci i numeri: ";
     for(int i=0; i<l; i++){
         do{
-            cout<<"Inserisci un numero: ";
             cin>>v[i];
         }while(v[i]<=0 && v[i]>=9);
     }
@@ -33,12 +33,26 @@ void Attempt(int v[], int l)
 
 string Check(int x[], int y[], int l)
 {
-    string strike;
+    string strike = "";
+    bool match;
     for(int i=0; i<l; i++){
+        match = false;
         if(x[i] == y[i]){
-            strike += "*";
+            strike += "x";
+            match = true;
         }
-    }
+        else{
+                for(int g=0; g<l; g++){
+                    if(y[i] == x[g] && i!=g){
+                    strike += "o";
+                    match = true;
+                    }
+                }
+        }
+        if(match==false){
+            strike += "-";
+        }
+        }
     return strike;
 }
 
@@ -57,17 +71,17 @@ int main()
         cout << endl << tentativi << " Tentativi rimanenti" << endl;
         Attempt(playerarray, 4);
         r = Check(cpuarray, playerarray, 4);
-        if(r=="****"){
+        if(r=="xxxx"){
         break;
     }
         cout<<r;
         tentativi -= 1;
     }
-    if(r=="****"){
+    if(r=="xxxx"){
         cout<<"Sei il campione supremo di questo gioco";
     }
     else{
-        cout <<"Sei stato sconfitto da un computer...";
+        cout << endl << "Sei stato sconfitto da un computer...";
     }
     return 0;
 }
