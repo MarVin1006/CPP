@@ -27,14 +27,15 @@ void print()
 
 void hship(int l)
 {
+    int randl=l-rand()%l+1;
     int row=rand()%LEN;
-    int column=rand()%(LEN-l);
+    int column=rand()%(LEN-randl);
     cout << "riga= "<<row<<" colonna= "<<column<<endl;
-    for (int i=column; i<column+l; i++){
+    for (int i=column; i<column+randl; i++){
         if(i==column){
             bf[row][i]='<';
         }
-    else if (i==column+l-1){
+    else if (i==column+randl-1){
         bf[row][i]='>';
         }
     else{
@@ -45,14 +46,15 @@ void hship(int l)
 
 void vship(int l)
 {
-    int row=rand()%(LEN-l);
+    int randl=l-rand()%l+1;
+    int row=rand()%(LEN-randl);
     int column=rand()%LEN;
     cout << "riga= "<<row<<" colonna= "<<column<<endl;
-    for (int i=row; i<row+l; i++){
+    for (int i=row; i<row+randl; i++){
         if(i==row){
             bf[i][column]='^';
         }
-    else if (i==row+l-1){
+    else if (i==row+randl-1){
         bf[i][column]='v';
         }
     else{
@@ -64,20 +66,23 @@ void vship(int l)
 
 void shipgen(int maxlen, int shipquantity){
     for (int i=0; i<shipquantity; i++){
-
-    vship(maxlen);
-    hship(maxlen);
+    if (rand()%2 == 0){
+        vship(maxlen);
+    }
+    else{
+        hship(maxlen);
+    }
     }
 }
 
 int main()
 {
     srand(time(NULL));
-    clear();   
+    clear();
     cout<<"Programma BattleShip2 in esecuzione"<<endl;
-    shipgen(7, 10);
+    shipgen(4, 5);
     print();
-    
+
 
     return 0;
 }
