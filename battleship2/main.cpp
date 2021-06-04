@@ -13,14 +13,27 @@ void clear(){
     }
 }
 
-void print()
+void print(bool showships)
 {
+    for(int i=0; i<LEN; i++){cout << i <<" ";} cout << endl;
     for(int i=0; i<LEN; i++){cout << "--";} cout << endl;
     for(int i=0; i<LEN; i++){
         for(int j=0; j<LEN; j++){
+            if (showships==true){
             cout<< bf[i][j] << ' ';
+            }
+            else{
+                if (bf[i][j] == 'X')
+                {
+                    cout << bf[i][j];
+                }
+                else{
+                    cout << " ";
+                }
+                cout << " ";
+            }
         }
-        cout << endl;
+        cout << i << endl;
     }
     for(int i=0; i<LEN; i++){cout << "--";} cout << endl;
 }
@@ -75,13 +88,16 @@ void shipgen(int maxlen, int shipquantity){
     }
 }
 
+
+
 int main()
 {
+    bool showships = false;
     srand(time(NULL));
     clear();
     cout<<"Programma BattleShip2 in esecuzione"<<endl;
     shipgen(4, 5);
-    print();
+    print(showships);
 
 
     return 0;
