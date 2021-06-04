@@ -88,16 +88,51 @@ void shipgen(int maxlen, int shipquantity){
     }
 }
 
+bool IsAShip(char m){
+    if (m || '<' || '>' || '-' || '^' || 'v' || '|')
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+    
+}
 
+bool checkships(){
+    for(int i=0; i<LEN; i++){
+        for(int j=0; j<LEN; j++){
+            if (bf[i][j] == IsAShip(bf[i][j])){
+            return false;
+            }
+        }
+    }
+    return true;
+}
+
+void strike()
+{
+    int x, y;
+    do
+    {
+    cout << "Inserisci le coordinate" << endl << "X Y" << endl;
+    cin >> x, y;
+    }
+    while((x>LEN || y<0) || (y>LEN || y<0));
+}
 
 int main()
 {
+    
     bool showships = false;
+    bool win = checkships();
     srand(time(NULL));
     clear();
     cout<<"Programma BattleShip2 in esecuzione"<<endl;
     shipgen(4, 5);
     print(showships);
+    strike();
 
 
     return 0;
