@@ -1,5 +1,5 @@
 /*
-Il programma genera una matrice 4x4 di numeri casuali e ne trova la somma più alta.
+Il programma genera due matrice 4x4 di numeri casuali e ne crea una terza che è composta dalle somma delle due precedenti.
 */
 #include <iostream>
 #include <time.h>
