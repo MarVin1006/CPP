@@ -58,7 +58,7 @@ bool weWon(int v[], int l) {
     return true;
 }
 
-int main()
+int Battleship()
 {
     int num_bomb = 0;
     const int MAPLENGTH = 10;

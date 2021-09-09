@@ -125,7 +125,7 @@ void strike()
 int main()
 {
     
-    bool showships = false;
+    bool showships = true;
     bool win = checkships();
     srand(time(NULL));
     clear();
